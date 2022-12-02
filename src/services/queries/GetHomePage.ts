@@ -83,6 +83,7 @@ export const query = /* GRAPHQL */ `
             tv
             restaurant
             roomService
+            left
             picture{
               data{
                 id
@@ -111,4 +112,5 @@ export const query = /* GRAPHQL */ `
     }
   }
 }
+
 `;

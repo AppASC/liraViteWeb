@@ -8,6 +8,8 @@ import {
   Image,
   BottomContainer,
   RoomContainer,
+  Slider,
+  InfoRoomContainer,
 } from "./styles";
 
 import { getImageUrl } from "../../utils/getImageUrl";
@@ -33,6 +35,7 @@ export type RoomProps = {
   tv: boolean;
   restaurant: boolean;
   roomService: boolean;
+  left: boolean;
   picture: {
     data: [
       {
@@ -67,12 +70,45 @@ export function Hotel({ data }: HotelProps) {
       </TopContainer>
       <Title>{data?.greeting}</Title>
       <BottomContainer>
-        {data?.room.map((room) => (
-          <RoomContainer key={room.id}>
-            <Title>{room.title}</Title>
-            {Parser().parse(room.description)}
-          </RoomContainer>
-        ))}
+        {data?.room.map((room) => {
+          if (room.left) {
+            return (
+              <RoomContainer key={room.id}>
+                <Slider>
+                  {room.picture.data?.map((image) => (
+                    <Image
+                      key={image.id}
+                      src={getImageUrl(image.attributes.url)}
+                      alt="Image do Parque"
+                    />
+                  ))}
+                </Slider>
+                <InfoRoomContainer>
+                  <Title>{room.title}</Title>
+                  {Parser().parse(room.description)}
+                </InfoRoomContainer>
+              </RoomContainer>
+            );
+          } else {
+            return (
+              <RoomContainer key={room.id}>
+                <InfoRoomContainer>
+                  <Title>{room.title}</Title>
+                  {Parser().parse(room.description)}
+                </InfoRoomContainer>
+                <Slider>
+                  {room.picture.data?.map((image) => (
+                    <Image
+                      key={image.id}
+                      src={getImageUrl(image.attributes.url)}
+                      alt="Image do Parque"
+                    />
+                  ))}
+                </Slider>
+              </RoomContainer>
+            );
+          }
+        })}
       </BottomContainer>
     </Container>
   );

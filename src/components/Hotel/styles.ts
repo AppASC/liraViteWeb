@@ -1,4 +1,5 @@
 import styled, { css } from "styled-components";
+import { Carousel } from "react-responsive-carousel";
 
 export const Container = styled.div`
   display: flex;
@@ -18,6 +19,12 @@ export const TopContainer = styled.div`
   flex-direction: row;
   padding: 4rem;
   align-items: center;
+
+  ${({ theme }) => css`
+    @media ${theme.device.tablet} {
+      flex-direction: column;
+    }
+  `}
 `;
 export const InfoContainer = styled.div`
   p {
@@ -58,23 +65,49 @@ export const Image = styled.img`
 export const BottomContainer = styled.div`
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-evenly;
   flex-wrap: wrap;
   gap: 1rem;
+
+  ${({ theme }) => css`
+    @media ${theme.device.tablet} {
+      flex-direction: column;
+    }
+  `}
 `;
 
 export const RoomContainer = styled.div`
+  padding: 1rem;
+  /* background-color: ${({ theme }) => theme.colors.shape}; */
+  border-radius: 1rem;
+  display: flex;
+
+  ${({ theme }) => css`
+    @media ${theme.device.tablet} {
+      flex-direction: column;
+    }
+  `}
+`;
+
+export const InfoRoomContainer = styled.div`
+  margin-left: 2rem;
+  min-width: 50%;
   p {
     ${({ theme }) => css`
       font-family: ${theme.fonts.primary};
       font-size: ${theme.fontSize.small};
-      color: ${theme.colors.black};
+      color: ${theme.colors.shape};
       text-align: justify;
     `}
     margin-top:1rem;
   }
-  width: 40%;
-  padding: 1rem;
-  background-color: ${({ theme }) => theme.colors.background};
-  border-radius: 1rem;
 `;
+
+export const Slider = styled(Carousel).attrs({
+  autoPlay: true,
+  showArrows: true,
+  emulateTouch: false,
+  swipeable: false,
+  infiniteLoop: true,
+  showThumbs: false,
+})``;
