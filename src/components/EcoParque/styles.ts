@@ -62,9 +62,12 @@ export const MediaContainer = styled.div`
   flex-direction: column;
   align-items: center;
   margin-right: 2rem;
+  transition: transform 1s;
   ${({ theme }) => css`
     @media ${theme.device.tablet} {
       margin-bottom: 2rem;
+      transform: scale(0.9);
+      align-self: center;
     }
   `}
 `;
@@ -89,7 +92,7 @@ export const ActivityContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: ${({ theme }) => theme.colors.shape};
+  background-color: ${({ theme }) => theme.colors.backgroundItems};
   border-radius: 1rem;
   transition: transform 1s;
   ${({ theme }) => css`

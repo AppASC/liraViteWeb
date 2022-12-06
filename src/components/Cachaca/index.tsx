@@ -2,10 +2,10 @@ import { Parser } from "html-to-react";
 
 import {
   Container,
-  InfoContainer,
-  Title,
-  MediaContainer,
   Image,
+  InfoContainer,
+  MediaContainer,
+  Title,
 } from "./styles";
 
 import { getImageUrl } from "../../utils/getImageUrl";
@@ -20,6 +20,7 @@ export type PictureProps = {
 };
 
 export type LiraProps = {
+  anchor: string;
   data: {
     title: string;
     description: string;
@@ -28,9 +29,9 @@ export type LiraProps = {
   };
 };
 
-export function Cachaca({ data }: LiraProps) {
+export function Cachaca({ anchor, data }: LiraProps) {
   return (
-    <Container>
+    <Container id={anchor}>
       <InfoContainer>
         <Title>{data?.title}</Title>
         {Parser().parse(data?.description)}

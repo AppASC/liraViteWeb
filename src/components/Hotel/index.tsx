@@ -1,19 +1,20 @@
 import { Parser } from "html-to-react";
 
 import {
-  Container,
-  InfoContainer,
-  Title,
-  TopContainer,
-  Image,
   BottomContainer,
+  Container,
+  Image,
+  InfoContainer,
+  InfoRoomContainer,
+  Link,
   RoomContainer,
   Slider,
-  InfoRoomContainer,
+  Title,
+  TitleRoom,
+  TopContainer,
 } from "./styles";
 
 import { getImageUrl } from "../../utils/getImageUrl";
-import { Carousel } from "../Carousel";
 
 export type PictureProps = {
   data: {
@@ -49,6 +50,7 @@ export type RoomProps = {
 };
 
 export type HotelProps = {
+  anchor: string;
   data: {
     title: string;
     description: string;
@@ -58,9 +60,9 @@ export type HotelProps = {
   };
 };
 
-export function Hotel({ data }: HotelProps) {
+export function Hotel({ anchor, data }: HotelProps) {
   return (
-    <Container>
+    <Container id={anchor}>
       <TopContainer>
         <Image src={getImageUrl(data?.picture.data.attributes.url)} />
         <InfoContainer>
@@ -84,17 +86,29 @@ export function Hotel({ data }: HotelProps) {
                   ))}
                 </Slider>
                 <InfoRoomContainer>
-                  <Title>{room.title}</Title>
+                  <TitleRoom>{room.title}</TitleRoom>
                   {Parser().parse(room.description)}
+                  <Link
+                    href="https://reservas.desbravador.com.br/hotel-app/lira-pousada-de-charme"
+                    target="_blank"
+                  >
+                    Reservar
+                  </Link>
                 </InfoRoomContainer>
               </RoomContainer>
             );
           } else {
             return (
               <RoomContainer key={room.id}>
-                <InfoRoomContainer>
-                  <Title>{room.title}</Title>
+                <InfoRoomContainer left={room.left}>
+                  <TitleRoom>{room.title}</TitleRoom>
                   {Parser().parse(room.description)}
+                  <Link
+                    href="https://reservas.desbravador.com.br/hotel-app/lira-pousada-de-charme"
+                    target="_blank"
+                  >
+                    Reservar
+                  </Link>
                 </InfoRoomContainer>
                 <Slider>
                   {room.picture.data?.map((image) => (

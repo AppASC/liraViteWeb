@@ -46,10 +46,13 @@ export const MediaContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   margin-left: 2rem;
+  transition: transform 1s;
   ${({ theme }) => css`
     @media ${theme.device.tablet} {
       margin-top: 2rem;
+      transform: scale(0.9);
     }
   `}
 `;

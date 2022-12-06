@@ -1,30 +1,30 @@
-import { useState, useEffect } from "react";
-import { useTheme } from "styled-components";
-import { Header, NavProps } from "../../components/Header";
-import { Carousel, PictureProps } from "../../components/Carousel";
+import { useEffect, useState } from "react";
 import { MoonLoader } from "react-spinners";
-import { Container, SpinnerContainer } from "./styles";
-import {
-  Welcome,
-  PictureProps as WelcomePictureProps,
-} from "../../components/Welcome";
-import {
-  EcoParque,
-  ActivitiesProps,
-  PictureProps as EcoParquePictureProps,
-} from "../../components/EcoParque";
+import { useTheme } from "styled-components";
 import {
   Cachaca,
   PictureProps as LiraPictureProps,
 } from "../../components/Cachaca";
+import { Carousel, PictureProps } from "../../components/Carousel";
+import {
+  ActivitiesProps,
+  EcoParque,
+  PictureProps as EcoParquePictureProps,
+} from "../../components/EcoParque";
+import { Footer } from "../../components/Footer";
+import { Header, NavProps } from "../../components/Header";
 import {
   Hotel,
   PictureProps as HotelPictureProps,
   RoomProps,
 } from "../../components/Hotel";
+import {
+  PictureProps as WelcomePictureProps,
+  Welcome,
+} from "../../components/Welcome";
 import { client } from "../../services/api";
 import { query } from "../../services/queries/GetHomePage";
-import { Footer } from "../../components/Footer";
+import { Container, SpinnerContainer } from "./styles";
 
 type LandinPageProps = {
   data: {
@@ -45,6 +45,7 @@ type LandinPageProps = {
         picture: WelcomePictureProps;
       };
       park: {
+        anchor: string;
         greeting: string;
         title: string;
         description: string;
@@ -55,9 +56,11 @@ type LandinPageProps = {
         greeting: string;
         title: string;
         description: string;
+        anchor: string;
         picture: LiraPictureProps;
       };
       hotel: {
+        anchor: string;
         greeting: string;
         title: string;
         description: string;
@@ -90,9 +93,18 @@ export function Home() {
         <Container>
           <Carousel data={landingPage.data?.attributes.carousel} />
           <Welcome data={landingPage.data?.attributes.welcome} />
-          <EcoParque data={landingPage.data?.attributes.park} />
-          <Cachaca data={landingPage.data?.attributes.lira} />
-          <Hotel data={landingPage.data?.attributes.hotel} />
+          <EcoParque
+            anchor={landingPage.data?.attributes.park.anchor}
+            data={landingPage.data?.attributes.park}
+          />
+          <Cachaca
+            anchor={landingPage.data?.attributes.lira.anchor}
+            data={landingPage.data?.attributes.lira}
+          />
+          <Hotel
+            anchor={landingPage.data?.attributes.hotel.anchor}
+            data={landingPage.data?.attributes.hotel}
+          />
           <Footer />
         </Container>
       </>

@@ -1,16 +1,16 @@
 import { Parser } from "html-to-react";
 import { getImageUrl } from "../../utils/getImageUrl";
 import {
-  Container,
-  InfoContainer,
-  Title,
-  Text,
-  MediaContainer,
-  Image,
-  MainContainer,
   ActivitiesContainer,
   ActivityContainer,
+  Container,
+  Image,
   ImageActivity,
+  InfoContainer,
+  MainContainer,
+  MediaContainer,
+  Text,
+  Title,
 } from "./styles";
 
 export type PictureProps = {
@@ -28,6 +28,7 @@ export type ActivitiesProps = {
 };
 
 export type EcoParqueProps = {
+  anchor: string;
   data: {
     title: string;
     description: string;
@@ -37,9 +38,9 @@ export type EcoParqueProps = {
   };
 };
 
-export function EcoParque({ data }: EcoParqueProps) {
+export function EcoParque({ anchor, data }: EcoParqueProps) {
   return (
-    <Container>
+    <Container id={anchor}>
       <MainContainer>
         <MediaContainer>
           <Image src={getImageUrl(data?.picture.data.attributes.url)} />

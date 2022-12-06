@@ -1,16 +1,16 @@
+import {
+  FacebookLogo,
+  InstagramLogo,
+  WhatsappLogo,
+  YoutubeLogo,
+} from "phosphor-react";
 import { useTheme } from "styled-components";
 import { Container, Link, NetworkContainer, Text, Title } from "./styles";
-import {
-  InstagramLogo,
-  YoutubeLogo,
-  FacebookLogo,
-  WhatsappLogo,
-} from "phosphor-react";
 
 export function Footer() {
   const theme = useTheme();
   return (
-    <Container>
+    <Container id="contatos">
       <Title>Siga-no nas redes sociais</Title>
       <NetworkContainer>
         <Link href="https://www.instagram.com/liraecoparque/">

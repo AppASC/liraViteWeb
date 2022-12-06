@@ -40,6 +40,7 @@ export const query = /* GRAPHQL */ `
           title
           description
           greeting
+          anchor
           picture {
               data {
                 id
@@ -64,6 +65,7 @@ export const query = /* GRAPHQL */ `
           title
           description
           greeting
+          anchor
           picture{
             data{
               id
@@ -99,6 +101,7 @@ export const query = /* GRAPHQL */ `
           title
           description
           greeting
+          anchor
           picture{
             data{
               id

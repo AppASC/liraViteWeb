@@ -15,7 +15,8 @@ export default {
     background: "#e1e1e6",
     white: "#FFFFFF",
     gray: "#CFCFCF",
-    black: "#121214",
+    black: "#333",
+    backgroundItems: "rgba(255,255,255,0.2)",
     alert: "#E83F5B",
   },
   fonts: {
