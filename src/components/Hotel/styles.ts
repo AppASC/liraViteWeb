@@ -7,23 +7,21 @@ type Props = {
 
 export const Container = styled.div`
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   background-color: ${({ theme }) => theme.colors.heading};
   padding: 4rem;
   align-items: center;
-
   ${({ theme }) => css`
     @media ${theme.device.tablet} {
       flex-direction: column;
     }
   `}
 `;
-
 export const TopContainer = styled.div`
   display: flex;
   flex-direction: row;
   padding: 4rem;
-
+  align-items: center;
   ${({ theme }) => css`
     @media ${theme.device.tablet} {
       flex-direction: column;
@@ -31,7 +29,6 @@ export const TopContainer = styled.div`
   `}
 `;
 export const InfoContainer = styled.div`
-  padding: 4rem;
   p {
     ${({ theme }) => css`
       font-family: ${theme.fonts.primary};
@@ -41,6 +38,7 @@ export const InfoContainer = styled.div`
     `}
     margin-top:1rem;
   }
+  margin-left: 2rem;
 `;
 
 export const Title = styled.h1`
@@ -65,15 +63,6 @@ export const Text = styled.p`
 export const Image = styled.img`
   height: 30rem;
   border-radius: 1rem;
-  object-fit: cover;
-  transition: transform 1s;
-
-  ${({ theme }) => css`
-    @media ${theme.device.tablet} {
-      margin-top: 2rem;
-      transform: scale(0.8);
-    }
-  `}
 `;
 
 export const BottomContainer = styled.div`
@@ -94,7 +83,6 @@ export const RoomContainer = styled.div`
   border-radius: 1rem;
   display: flex;
   align-items: center;
-
   ${({ theme }) => css`
     @media ${theme.device.tablet} {
       flex-direction: column;
@@ -124,7 +112,6 @@ export const InfoRoomContainer = styled.div<Props>`
     margin-top:1rem;
   }
   height: 100%;
-
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -153,7 +140,6 @@ export const Link = styled.a`
   font-size: ${({ theme }) => theme.fontSize.small};
   color: ${({ theme }) => theme.colors.black};
   cursor: pointer;
-
   :hover {
     filter: brightness(0.7);
   }
