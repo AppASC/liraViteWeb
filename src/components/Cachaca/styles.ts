@@ -57,4 +57,13 @@ export const MediaContainer = styled.div`
 export const Image = styled.img`
   height: 30rem;
   border-radius: 1rem;
+  object-fit: cover;
+  transition: transform 1s;
+
+  ${({ theme }) => css`
+    @media ${theme.device.tablet} {
+      margin-top: 2rem;
+      transform: scale(0.8);
+    }
+  `}
 `;

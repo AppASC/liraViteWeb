@@ -7,7 +7,7 @@ type Props = {
 
 export const Container = styled.div`
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   background-color: ${({ theme }) => theme.colors.heading};
   padding: 4rem;
   align-items: center;
@@ -18,11 +18,11 @@ export const Container = styled.div`
     }
   `}
 `;
+
 export const TopContainer = styled.div`
   display: flex;
   flex-direction: row;
   padding: 4rem;
-  align-items: center;
 
   ${({ theme }) => css`
     @media ${theme.device.tablet} {
@@ -31,6 +31,7 @@ export const TopContainer = styled.div`
   `}
 `;
 export const InfoContainer = styled.div`
+  padding: 4rem;
   p {
     ${({ theme }) => css`
       font-family: ${theme.fonts.primary};
@@ -40,7 +41,6 @@ export const InfoContainer = styled.div`
     `}
     margin-top:1rem;
   }
-  margin-left: 2rem;
 `;
 
 export const Title = styled.h1`
@@ -65,6 +65,15 @@ export const Text = styled.p`
 export const Image = styled.img`
   height: 30rem;
   border-radius: 1rem;
+  object-fit: cover;
+  transition: transform 1s;
+
+  ${({ theme }) => css`
+    @media ${theme.device.tablet} {
+      margin-top: 2rem;
+      transform: scale(0.8);
+    }
+  `}
 `;
 
 export const BottomContainer = styled.div`
