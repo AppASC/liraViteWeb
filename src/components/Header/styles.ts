@@ -8,7 +8,7 @@ export const Container = styled.div`
   justify-content: space-between;
   background-color: ${({ theme }) => theme.colors.heading};
   ${({ theme }) => css`
-    @media ${theme.device.tablet} {
+    @media ${theme.device.mobileL} {
       padding: 1rem 0;
       justify-content: space-evenly;
     }
@@ -37,7 +37,7 @@ export const Navigator = styled.nav`
   flex-direction: row;
   justify-content: flex-end;
   ${({ theme }) => css`
-    @media ${theme.device.tablet} {
+    @media ${theme.device.mobileL} {
       flex-direction: column;
       flex: 0;
     }

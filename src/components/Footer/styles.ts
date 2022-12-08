@@ -9,7 +9,7 @@ export const Container = styled.div`
   justify-content: center;
   background-color: ${({ theme }) => theme.colors.background};
   ${({ theme }) => css`
-    @media ${theme.device.tablet} {
+    @media ${theme.device.mobileL} {
       padding: 1rem 0;
       justify-content: space-evenly;
     }
@@ -24,7 +24,7 @@ export const NetworkContainer = styled.div`
   justify-content: space-evenly;
   align-items: center;
   ${({ theme }) => css`
-    @media ${theme.device.tablet} {
+    @media ${theme.device.mobileL} {
       flex-wrap: wrap;
     }
   `}

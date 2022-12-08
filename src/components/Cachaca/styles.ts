@@ -8,7 +8,7 @@ export const Container = styled.div`
   align-items: center;
 
   ${({ theme }) => css`
-    @media ${theme.device.tablet} {
+    @media ${theme.device.mobileL} {
       flex-direction: column;
     }
   `}
@@ -22,6 +22,7 @@ export const InfoContainer = styled.div`
       text-align: justify;
     `}
     margin-top:1rem;
+    margin-right: 1rem;
   }
 `;
 
@@ -42,28 +43,10 @@ export const Text = styled.p`
   `}
   margin-top:1rem;
 `;
-export const MediaContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-left: 2rem;
-  ${({ theme }) => css`
-    @media ${theme.device.tablet} {
-      margin-top: 2rem;
-    }
-  `}
-`;
 
 export const Image = styled.img`
   height: 30rem;
+  width: 100%;
   border-radius: 1rem;
-  object-fit: cover;
-  transition: transform 1s;
-
-  ${({ theme }) => css`
-    @media ${theme.device.tablet} {
-      margin-top: 2rem;
-      transform: scale(0.8);
-    }
-  `}
+  object-fit: contain;
 `;

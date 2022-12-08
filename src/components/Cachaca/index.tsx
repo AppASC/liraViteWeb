@@ -1,12 +1,6 @@
 import { Parser } from "html-to-react";
 
-import {
-  Container,
-  Image,
-  InfoContainer,
-  MediaContainer,
-  Title,
-} from "./styles";
+import { Container, Image, InfoContainer, Title } from "./styles";
 
 import { getImageUrl } from "../../utils/getImageUrl";
 
@@ -36,9 +30,8 @@ export function Cachaca({ anchor, data }: LiraProps) {
         <Title>{data?.title}</Title>
         {Parser().parse(data?.description)}
       </InfoContainer>
-      <MediaContainer>
-        <Image src={getImageUrl(data?.picture.data.attributes.url)} />
-      </MediaContainer>
+
+      <Image src={getImageUrl(data?.picture.data.attributes.url)} />
     </Container>
   );
 }

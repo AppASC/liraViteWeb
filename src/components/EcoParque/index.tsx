@@ -8,7 +8,6 @@ import {
   ImageActivity,
   InfoContainer,
   MainContainer,
-  MediaContainer,
   Text,
   Title,
 } from "./styles";
@@ -42,9 +41,7 @@ export function EcoParque({ anchor, data }: EcoParqueProps) {
   return (
     <Container id={anchor}>
       <MainContainer>
-        <MediaContainer>
-          <Image src={getImageUrl(data?.picture.data.attributes.url)} />
-        </MediaContainer>
+        <Image src={getImageUrl(data?.picture.data.attributes.url)} />
         <InfoContainer>
           <Title>{data?.title}</Title>
           {Parser().parse(data?.description)}

@@ -8,7 +8,7 @@ export const Container = styled.div`
   align-items: center;
 
   ${({ theme }) => css`
-    @media ${theme.device.tablet} {
+    @media ${theme.device.mobileL} {
       flex-direction: column;
     }
   `}
@@ -22,6 +22,7 @@ export const InfoContainer = styled.div`
       text-align: justify;
     `}
     margin-top:1rem;
+    margin-right: 1rem;
   }
 `;
 
@@ -33,32 +34,10 @@ export const Title = styled.h1`
   `}
   margin-bottom: 1rem;
 `;
-export const Text = styled.p`
-  ${({ theme }) => css`
-    font-family: ${theme.fonts.primary};
-    font-size: ${theme.fontSize.small};
-    color: ${theme.colors.black};
-    text-align: justify;
-  `}
-  margin-top:1rem;
-`;
-export const MediaContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin-left: 2rem;
-  transition: transform 1s;
-  ${({ theme }) => css`
-    @media ${theme.device.tablet} {
-      margin-top: 2rem;
-      transform: scale(0.9);
-    }
-  `}
-`;
 
 export const Image = styled.img`
   height: 30rem;
+  width: 100%;
   border-radius: 1rem;
-  object-fit: cover;
+  object-fit: contain;
 `;

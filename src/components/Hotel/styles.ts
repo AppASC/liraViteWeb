@@ -12,7 +12,7 @@ export const Container = styled.div`
   padding: 4rem;
   align-items: center;
   ${({ theme }) => css`
-    @media ${theme.device.tablet} {
+    @media ${theme.device.mobileL} {
       flex-direction: column;
     }
   `}
@@ -20,10 +20,8 @@ export const Container = styled.div`
 export const TopContainer = styled.div`
   display: flex;
   flex-direction: row;
-  padding: 4rem;
-  align-items: center;
   ${({ theme }) => css`
-    @media ${theme.device.tablet} {
+    @media ${theme.device.mobileL} {
       flex-direction: column;
     }
   `}
@@ -38,7 +36,7 @@ export const InfoContainer = styled.div`
     `}
     margin-top:1rem;
   }
-  margin-left: 2rem;
+  margin-left: 1rem;
 `;
 
 export const Title = styled.h1`
@@ -50,19 +48,11 @@ export const Title = styled.h1`
   margin-bottom: 1rem;
 `;
 
-export const Text = styled.p`
-  ${({ theme }) => css`
-    font-family: ${theme.fonts.primary};
-    font-size: ${theme.fontSize.small};
-    color: ${theme.colors.shape};
-    text-align: justify;
-  `}
-  margin-top:1rem;
-`;
-
 export const Image = styled.img`
   height: 30rem;
+  width: 100%;
   border-radius: 1rem;
+  object-fit: contain;
 `;
 
 export const BottomContainer = styled.div`
@@ -71,7 +61,7 @@ export const BottomContainer = styled.div`
   flex-wrap: wrap;
   gap: 1rem;
   ${({ theme }) => css`
-    @media ${theme.device.tablet} {
+    @media ${theme.device.mobileL} {
       flex-direction: column;
     }
   `}
@@ -84,7 +74,7 @@ export const RoomContainer = styled.div`
   display: flex;
   align-items: center;
   ${({ theme }) => css`
-    @media ${theme.device.tablet} {
+    @media ${theme.device.mobileL} {
       flex-direction: column;
     }
   `}

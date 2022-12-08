@@ -7,7 +7,7 @@ export const Container = styled.div`
   padding: 4rem;
   align-items: center;
   ${({ theme }) => css`
-    @media ${theme.device.tablet} {
+    @media ${theme.device.mobileL} {
       flex-direction: column;
     }
   `}
@@ -19,11 +19,12 @@ export const MainContainer = styled.div`
   margin-bottom: 2rem;
   align-items: center;
   ${({ theme }) => css`
-    @media ${theme.device.tablet} {
+    @media ${theme.device.mobileL} {
       flex-direction: column;
     }
   `}
 `;
+
 export const InfoContainer = styled.div`
   p {
     ${({ theme }) => css`
@@ -33,6 +34,7 @@ export const InfoContainer = styled.div`
       text-align: justify;
     `}
     margin-top:1rem;
+    margin-left: 1rem;
   }
 `;
 
@@ -55,26 +57,11 @@ export const Text = styled.p`
   margin-top:1rem;
 `;
 
-export const MediaContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-right: 2rem;
-  transition: transform 1s;
-  ${({ theme }) => css`
-    @media ${theme.device.tablet} {
-      margin-bottom: 2rem;
-      transform: scale(0.9);
-      align-self: center;
-    }
-  `}
-`;
-
 export const Image = styled.img`
   height: 30rem;
-  width: 40rem;
+  width: 100%;
   border-radius: 1rem;
-  object-fit: cover;
+  object-fit: contain;
 `;
 
 export const ActivitiesContainer = styled.div`
@@ -106,4 +93,11 @@ export const ImageActivity = styled.img`
   border-top-left-radius: 1rem;
   border-top-right-radius: 1rem;
   object-fit: cover;
+  ${({ theme }) => css`
+    @media ${theme.device.mobileL} {
+      flex-direction: column;
+      height: 10rem;
+      width: 10rem;
+    }
+  `}
 `;
